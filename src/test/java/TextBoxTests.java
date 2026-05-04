@@ -16,6 +16,7 @@ public class TextBoxTests extends TestBase{
         $("[id=permanentAddress]").setValue("second adredd2");
         $("[id=submit]").click();
 
+
         $("[id=output] [id=name]").shouldHave(text("Alex Black"));
         $("[id=output] [id=email]").shouldHave(text("alex@black.com"));
         $("[id=output] [id=currentAddress]").shouldHave(text("first address1"));
