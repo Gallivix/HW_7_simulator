@@ -13,7 +13,7 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         // Configuration.pageLoadStrategy = "eager";
         Configuration.timeout = 10000; // default = 4000;
-        Configuration.browserVersion = "144.0";
+  //      Configuration.browserVersion = "144.0";
     }
 
     @AfterEach
