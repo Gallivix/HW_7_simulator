@@ -1,22 +1,18 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
-
 public class PracticeForm {
-       @BeforeAll
-        static void beforeAll() {
-            Configuration.browserSize = "1920x1080";
-            Configuration.browser = "chrome";
-            Configuration.baseUrl = "https://demoqa.com";
-            // Configuration.pageLoadStrategy = "eager";
-            Configuration.timeout = 10000; // default = 4000;
-            //      Configuration.browserVersion = "144.0";
-        }
+    @BeforeAll
+    static void beforeAll() {
 
-        @AfterEach
-        void afterEach() {
-            closeWebDriver();
-        }
+        Configuration.browser = "chrome";
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.timeout = 10000;
+
+        // Задаём размер и положение окна
+        Configuration.browserSize = "1920x1080";
+        Configuration.browserPosition = "0x0";   // ← это ключевой параметр!
+
+        Configuration.holdBrowserOpen = true;
     }
+}
