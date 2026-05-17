@@ -40,6 +40,7 @@ public class TextBoxPage {
 
     public TextBoxPage typePermanentAddress(String value) {
         permanentAddressInput.setValue(value);
+        return this;
     }
 
     public TextBoxPage SubmitForm() {
