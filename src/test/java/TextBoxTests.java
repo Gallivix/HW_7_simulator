@@ -3,7 +3,7 @@ import pages.TextBoxPage;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+ import static com.codeborne.selenide.Selenide.open;
 import static tests.testdata.TestData.*;
 
 public class TextBoxTests extends TestBase {
@@ -28,12 +28,33 @@ public class TextBoxTests extends TestBase {
     }
 
     @Test
+    void sucessfulFillFormWithoutAdressTest_chaining() {
+        textBoxPage.
+                openPage()
+                .typeUserName(userName)
+                .typeUserEmail(userEmail)
+                .SubmitForm()
+                .checkField("name", userName)
+                .checkField("name", userEmail);
+    }
+
+    @Test
     void sucessfulFillFormWithoutAdressTest() {
-        textBoxPage.openPage();
-        textBoxPage.typeUserName(userName);
+       /* textBoxPage.openPage()
+                .typeUserName(userName)
+                .typeUserEmail(userEmail)
+                .SubmitForm()
+                .checkField("name", userName)
+                .checkField("name", userEmail);*/
+
+
+        /*textBoxPage.typeUserName(userName);
         textBoxPage.typeUserEmail(userEmail);
         textBoxPage.SubmitForm();
         textBoxPage.checkField("name", userName);
-        textBoxPage.checkField("name", userEmail);
+        textBoxPage.checkField("name", userEmail);*/
     }
+
+
+
 }

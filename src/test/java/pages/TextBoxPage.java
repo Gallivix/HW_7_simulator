@@ -15,33 +15,40 @@ public class TextBoxPage {
     private SelenideElement permanentAddressInput = $("#permanentAddress");
     private SelenideElement submitButton = $("#submit");
     private SelenideElement outputResults = $("#output");
-    public void openPage() {
+    public TextBoxPage openPage() {
         open("/text-box");
+        return this;
     }
 
     // Actions
-    public void typeUserName(String value) {
+    public TextBoxPage typeUserName(String value) {
         userNameInput.setValue(value);
+
+        return this;
     }
 
-    public void typeUserEmail(String value) {
+    public TextBoxPage typeUserEmail(String value) {
 
         userEmailInput.setValue(value);
+        return this;
     }
 
-    public void typeCurrentAddress(String value) {
+    public TextBoxPage typeCurrentAddress(String value) {
         currentAddressInput.setValue(value);
+        return this;
     }
 
-    public void typePermanentAddress(String value) {
+    public TextBoxPage typePermanentAddress(String value) {
         permanentAddressInput.setValue(value);
     }
 
-    public void SubmitForm() {
+    public TextBoxPage SubmitForm() {
         submitButton.click();
+        return this;
     }
-    public void checkField(String key, String value) {
+    public TextBoxPage checkField(String key, String value) {
         outputResults.$(byId(key)).shouldHave(text(value));
+        return this;
 
     }
 }
