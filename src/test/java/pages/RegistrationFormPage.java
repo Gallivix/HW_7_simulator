@@ -123,11 +123,18 @@ public SelenideElement submitButton = $("#submit");
         return this;
     }
 
+    public RegistrationFormPage checkResult(String key, String value) {
 
-    public RegistrationFormPage checkResult(String expectedValue) {
-        outputResults.shouldHave(text(expectedValue));
+        SelenideElement field = outputResults.$(byId(key));
+        if (field.exists()) {
+            field.shouldHave(text(value));
+        } else {
+            outputResults.$("td=" + key).parent().$$("td").last().shouldHave(text(value));
+        }
         return this;
     }
+
+
 
     public RegistrationFormPage checkModalAppears() {
         modalDialog.should(appear);

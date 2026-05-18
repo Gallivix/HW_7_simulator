@@ -32,10 +32,9 @@ public class ВарTestPracticeForm extends PracticeForm {
         registrationFormPage.typeCity();
         registrationFormPage.SubmitForm();
         registrationFormPage.checkModalAppears();
-        registrationFormPage.checkResult(firstName);
-        registrationFormPage.checkResult(lastName);
-        registrationFormPage.checkResult(userEmail);
-        registrationFormPage.checkResult(userNumber);
+        registrationFormPage.checkResult("Student Name", firstName + " " + lastName);
+        registrationFormPage.checkResult("Student Email", userEmail);
+        registrationFormPage.checkResult("Mobile", userNumber);
 
     }
 
