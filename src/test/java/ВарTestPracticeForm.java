@@ -62,7 +62,7 @@ public class ВарTestPracticeForm extends PracticeForm {
         $("[id=react-select-4-option-1]").click();
         $("[id=submit]").click();
 
-        $("div.modal-dialog").should( appear);
+        $("div.modal-dialog").should(appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName), text(lastName),
                 text(userEmail),
