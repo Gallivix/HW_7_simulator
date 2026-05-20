@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
 
@@ -8,12 +9,12 @@ import static tests.testdata.TestData.*;
 
 public class TextBoxTests extends TestBase {
     TextBoxPage textBoxPage = new TextBoxPage();
+
+
+
     @Test
 
     void successfulFillFormTest() {
-
-
-
         textBoxPage.openPage();
         textBoxPage.typeUserName(userName);
         textBoxPage.typeUserEmail(userEmail);
