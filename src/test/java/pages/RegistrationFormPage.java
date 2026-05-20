@@ -11,24 +11,24 @@ import static com.codeborne.selenide.Selenide.open;
 public class RegistrationFormPage {
 
 // Elements
-private SelenideElement outputResults = $(".table-responsive");
-private SelenideElement modalDialog = $("div.modal-dialog");
-private SelenideElement modalTitle = $("#example-modal-sizes-title-lg");
+private final SelenideElement outputResults = $(".table-responsive");
+private final SelenideElement modalDialog = $("div.modal-dialog");
+private final SelenideElement modalTitle = $("#example-modal-sizes-title-lg");
 
-private SelenideElement firstNameInput = $("#firstName");
-private SelenideElement lastNameInput = $("#lastName");
-private SelenideElement userEmailInput = $("#userEmail");
-private SelenideElement genderContainer = $("[for=gender-radio-1]");
-private SelenideElement userNumberInput = $("#userNumber");
-private SelenideElement subjects = $("#subjectsInput");
-private SelenideElement subjectsInput = $("#subjectsInput");
-private SelenideElement subjectsClick =  $("#react-select-2-option-0");
-private SelenideElement hobbiesCheckBox = $("#hobbies-checkbox-1");
-private SelenideElement currentAddressInput =  $("#currentAddress");
-private SelenideElement state =  $("#state");
-private SelenideElement stateInput = $("#react-select-3-option-1");
-private SelenideElement city =  $("#city");
-private SelenideElement cityInput= $("#react-select-4-option-1");
+private final SelenideElement firstNameInput = $("#firstName");
+private final SelenideElement lastNameInput = $("#lastName");
+private final SelenideElement userEmailInput = $("#userEmail");
+private final SelenideElement genderContainer = $("[for=gender-radio-1]");
+private final SelenideElement userNumberInput = $("#userNumber");
+private final SelenideElement subjects = $("#subjectsInput");
+private final SelenideElement subjectsInput = $("#subjectsInput");
+private final SelenideElement subjectsClick =  $("#react-select-2-option-0");
+private final SelenideElement hobbiesCheckBox = $("#hobbies-checkbox-1");
+private final SelenideElement currentAddressInput =  $("#currentAddress");
+private final SelenideElement state =  $("#state");
+private final SelenideElement stateInput = $("#react-select-3-option-1");
+private final SelenideElement city =  $("#city");
+private final SelenideElement cityInput= $("#react-select-4-option-1");
 public SelenideElement submitButton = $("#submit");
 
     public RegistrationFormPage openPage() {
@@ -124,13 +124,7 @@ public SelenideElement submitButton = $("#submit");
     }
 
     public RegistrationFormPage checkResult(String key, String value) {
-
-        SelenideElement field = outputResults.$(byId(key));
-        if (field.exists()) {
-            field.shouldHave(text(value));
-        } else {
-            outputResults.$("td=" + key).parent().$$("td").last().shouldHave(text(value));
-        }
+        outputResults.shouldHave(text(key), text(value));
         return this;
     }
 

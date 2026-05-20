@@ -1,7 +1,5 @@
 import org.junit.jupiter.api.Test;
 import pages.RegistrationFormPage;
-//import pages.RegistrationFormPage;
-
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
@@ -9,10 +7,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static tests.testdata.TestForm.*;
 
 public class ВарTestPracticeForm extends PracticeForm {
-
     RegistrationFormPage registrationFormPage = new RegistrationFormPage();
-
-
     @Test
     void StudentRegistrationForm_pageObject() {
         registrationFormPage.openPage();
