@@ -11,6 +11,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.14.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.assertj:assertj-core:3.27.3'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
 
     // Selenide (актуальная версия)
     testImplementation 'com.codeborne:selenide:7.7.3'
